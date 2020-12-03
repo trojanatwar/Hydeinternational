@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Admin</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/assets/css/admin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <a href="{{url_for('logout')}}" style="position: absolute;
+                                            top: 15px;
+                                            right: 40px;"><strong>Log out</strong></a>
+    <form class="form-signin" action="/admin" method="POST">
+      <label for="inputPassword" class="sr-only">Enter Password</label>
+      <h3>Enter Password</h3>
+      <input type="password" name="passw" id="inputPassword" class="form-control" placeholder="Password" required>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+      <h3 id="successMessage" style="color: #81e693;">{{msg}}</h3>
+    </form>
+  </body>
+  <script type="text/javascript">
+   document.getElementById('successMessage').style.display = 'block';
+      setTimeout(function(){
+        document.getElementById('successMessage').style.display = 'none';
+      }, 5000);
+  </script>
+</html>
